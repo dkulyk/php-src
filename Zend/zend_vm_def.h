@@ -6278,7 +6278,21 @@ ZEND_VM_C_LABEL(num_index):
 		} else if ((OP2_TYPE & (IS_VAR|IS_CV)) && EXPECTED(Z_TYPE_P(offset) == IS_REFERENCE)) {
 			offset = Z_REFVAL_P(offset);
 			ZEND_VM_C_GOTO(add_again);
-		} else if (Z_TYPE_P(offset) == IS_NULL) {
+		} else if (UNEXPECTED(Z_TYPE_P(offset) == IS_NULL)) {
+			zval tmp;
+			if (OP1_TYPE == IS_CV || OP1_TYPE == IS_VAR) {
+				ZVAL_COPY(&tmp, expr_ptr);
+			}
+			zend_error(E_DEPRECATED, "Using null as an array offset is deprecated, use an empty string instead");
+			if (OP1_TYPE == IS_CV || OP1_TYPE == IS_VAR) {
+				/* A userland error handler can do funky things to the expression, so reset it */
+				zval_ptr_dtor(expr_ptr);
+				ZVAL_COPY_VALUE(expr_ptr, &tmp);
+			}
+			if (UNEXPECTED(EG(exception))) {
+				zval_ptr_dtor_nogc(expr_ptr);
+				HANDLE_EXCEPTION();
+			}
 			str = ZSTR_EMPTY_ALLOC();
 			ZEND_VM_C_GOTO(str_index);
 		} else if (Z_TYPE_P(offset) == IS_DOUBLE) {
@@ -7307,7 +7321,7 @@ ZEND_VM_HANDLER(126, ZEND_FE_FETCH_RW, VAR, ANY, JMP_ADDR)
 			while (1) {
 				if (UNEXPECTED(pos >= fe_ht->nNumUsed)) {
 					/* reached end of iteration */
-					ZEND_VM_C_GOTO(fe_fetch_w_exit);
+					ZEND_VM_C_GOTO(fe_fetch_w_exit_exc);
 				}
 				pos++;
 				value = &p->val;
@@ -7403,6 +7417,7 @@ ZEND_VM_HANDLER(126, ZEND_FE_FETCH_RW, VAR, ANY, JMP_ADDR)
 		}
 	} else {
 		zend_error(E_WARNING, "foreach() argument must be of type array|object, %s given", zend_zval_value_name(array));
+ZEND_VM_C_LABEL(fe_fetch_w_exit_exc):
 		if (UNEXPECTED(EG(exception))) {
 			UNDEF_RESULT();
 			HANDLE_EXCEPTION();
@@ -8005,7 +8020,7 @@ ZEND_VM_HANDLER(105, ZEND_TICKS, ANY, ANY, NUM)
 {
 	USE_OPLINE
 
-	if ((uint32_t)++EG(ticks_count) >= opline->extended_value) {
+	if (++EG(ticks_count) >= opline->extended_value) {
 		EG(ticks_count) = 0;
 		if (zend_ticks_function) {
 			SAVE_OPLINE();
@@ -9719,7 +9734,11 @@ ZEND_VM_HANDLER(202, ZEND_CALLABLE_CONVERT, UNUSED, UNUSED, NUM|CACHE_SLOT)
 		if (closure) {
 			ZVAL_OBJ_COPY(EX_VAR(opline->result.var), closure);
 		} else {
-			zval *closure_zv = zend_hash_index_lookup(&EG(callable_convert_cache), (zend_ulong)(uintptr_t)call->func);
+			/* Rotate the key for better hash distribution. */
+			const int shift = sizeof(size_t) == 4 ? 6 : 7;
+			zend_ulong key = (zend_ulong)(uintptr_t)call->func;
+			key = (key >> shift) | (key << ((sizeof(key) * 8) - shift));
+			zval *closure_zv = zend_hash_index_lookup(&EG(callable_convert_cache), key);
 			if (Z_TYPE_P(closure_zv) == IS_NULL) {
 				zend_closure_from_frame(closure_zv, call);
 			}
