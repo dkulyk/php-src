@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 9136c911494c9e3462c49b3e58f4bcc15ebb2a9c */
+ * Stub hash: 10faa6885517c5d2888dd243985beb4c3649dc73 */
 
 static void register_pdo_odbc_symbols(int module_number)
 {
@@ -11,7 +11,7 @@ static zend_class_entry *register_class_Pdo_Odbc(zend_class_entry *class_entry_P
 	zend_class_entry ce, *class_entry;
 
 	INIT_NS_CLASS_ENTRY(ce, "Pdo", "Odbc", NULL);
-	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES);
 
 	zval const_ATTR_USE_CURSOR_LIBRARY_value;
 	ZVAL_LONG(&const_ATTR_USE_CURSOR_LIBRARY_value, PDO_ODBC_ATTR_USE_CURSOR_LIBRARY);

@@ -26,6 +26,7 @@ const PHP_82_VERSION_ID = 80200;
 const PHP_83_VERSION_ID = 80300;
 const PHP_84_VERSION_ID = 80400;
 const PHP_85_VERSION_ID = 80500;
+const PHP_86_VERSION_ID = 80600;
 const ALL_PHP_VERSION_IDS = [
     PHP_70_VERSION_ID,
     PHP_80_VERSION_ID,
@@ -34,6 +35,7 @@ const ALL_PHP_VERSION_IDS = [
     PHP_83_VERSION_ID,
     PHP_84_VERSION_ID,
     PHP_85_VERSION_ID,
+    PHP_86_VERSION_ID
 ];
 
 // file_put_contents() but with a success message printed after saving
@@ -3037,6 +3039,12 @@ class StringBuilder {
         '8.5' => 'ZEND_STR_8_DOT_5',
     ];
 
+    // NEW in 8.6
+    private const PHP_86_KNOWN = [
+        "NoSerialize" => "ZEND_STR_NO_SERIALIZE",
+        "Attribute" => "ZEND_STR_ATTRIBUTE",
+    ];
+
     /**
      * Get an array of three strings:
      *   - declaration of zend_string, if needed, or empty otherwise
@@ -3075,6 +3083,10 @@ class StringBuilder {
         }
         $include = self::PHP_80_KNOWN;
         switch ($minPhp) {
+            case PHP_86_VERSION_ID:
+                $include = array_merge($include, self::PHP_86_KNOWN);
+                // Intentional fall through
+
             case PHP_85_VERSION_ID:
                 $include = array_merge($include, self::PHP_85_KNOWN);
                 // Intentional fall through
@@ -3251,6 +3263,14 @@ class PropertyInfo extends VariableLike
 
         if ($this->isVirtual) {
             $flags->addForVersionsAbove("ZEND_ACC_VIRTUAL", PHP_84_VERSION_ID);
+        }
+
+        foreach ($this->attributes as $attribute) {
+            switch ($attribute->class) {
+                case 'NoSerialize':
+                    $flags->addForVersionsAbove("ZEND_ACC_NO_SERIALIZE", PHP_86_VERSION_ID);
+                    break 2;
+            }
         }
 
         return $flags;
@@ -5030,12 +5050,21 @@ function parseClass(
     }
 
     $attributes = AttributeInfo::createFromGroups($class->attrGroups);
+    $hasNoSerializeAttribute = false;
     foreach ($attributes as $attribute) {
         switch ($attribute->class) {
             case 'AllowDynamicProperties':
                 $allowsDynamicProperties = true;
-                break 2;
+                break;
+            case 'NoSerialize':
+                $isNotSerializable  = true;
+                $hasNoSerializeAttribute = true;
+                break;
         }
+    }
+
+    if($isNotSerializable && !$hasNoSerializeAttribute) {
+        $attributes[] = new AttributeInfo(\NoSerialize::class, []);
     }
 
     if ($isStrictProperties && $allowsDynamicProperties) {
@@ -5157,9 +5186,10 @@ function generateArgInfoCode(
     array $allConstInfos,
     string $stubHash
 ): string {
-    $code = "/* This is a generated file, edit the .stub.php file instead.\n"
+    $header = "/* This is a generated file, edit the .stub.php file instead.\n"
           . " * Stub hash: $stubHash */\n";
 
+    $code = '';
     $generatedFuncInfos = [];
 
     $argInfoCode = generateCodeWithConditions(
@@ -5250,7 +5280,11 @@ function generateArgInfoCode(
         $code .= $fileInfo->generateClassEntryCode($allConstInfos);
     }
 
-    return $code;
+//     if(preg_match('/zend_add_[^(]+_attribute\(/', $code)) {
+//         $header .= "\n#include \"zend_attributes.h\"\n";
+//     }
+
+    return $header.$code;
 }
 
 /** @param FuncInfo[] $funcInfos */

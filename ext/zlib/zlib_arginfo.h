@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 4c5bea6d9f290c244c7bb27c77fe8007d43a40db */
+ * Stub hash: 9c2496424836ae78404169b844f88da06dfc4663 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_ob_gzhandler, 0, 2, MAY_BE_STRING|MAY_BE_FALSE)
 	ZEND_ARG_TYPE_INFO(0, data, IS_STRING, 0)
@@ -234,6 +234,8 @@ static zend_class_entry *register_class_InflateContext(void)
 	INIT_CLASS_ENTRY(ce, "InflateContext", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -243,6 +245,8 @@ static zend_class_entry *register_class_DeflateContext(void)
 
 	INIT_CLASS_ENTRY(ce, "DeflateContext", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlDatePatternGenerator
 {
     public function __construct(?string $locale = null) {}

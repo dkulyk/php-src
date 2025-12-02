@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class UConverter
 {
     /* enum UConverterCallbackReason */

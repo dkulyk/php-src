@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class Spoofchecker
 {
     /** @cvalue USPOOF_SINGLE_SCRIPT_CONFUSABLE */

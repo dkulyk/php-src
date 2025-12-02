@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 0d09bd2f3b0a155cef25ca343319ecf470424d71 */
+ * Stub hash: 6970ae805736d89c3d3f0af66cbfaf935543ee5d */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_CURLFile___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, filename, IS_STRING, 0)
@@ -73,6 +73,8 @@ static zend_class_entry *register_class_CURLFile(void)
 	zend_string *property_postname_name = zend_string_init("postname", sizeof("postname") - 1, true);
 	zend_declare_typed_property(class_entry, property_postname_name, &property_postname_default_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_STRING));
 	zend_string_release_ex(property_postname_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

@@ -3,9 +3,9 @@
 /** @generate-class-entries */
 
 /**
- * @not-serializable
  * @strict-properties
  */
+#[\NoSerialize]
 final class IntlListFormatter {
 
 #if U_ICU_VERSION_MAJOR_NUM >= 67

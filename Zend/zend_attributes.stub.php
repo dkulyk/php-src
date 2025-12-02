@@ -52,8 +52,8 @@ final class SensitiveParameter
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class SensitiveParameterValue
 {
     private readonly mixed $value;

@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlPartsIterator extends IntlIterator
 {
     /** @cvalue PARTS_ITERATOR_KEY_SEQUENTIAL */

@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: d376e984db0db6ccd9356f632f9d7e1382b2afb7 */
+ * Stub hash: a5c6521a51a9dd2d1379b9c47b432fb49e6946fe */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Generator_rewind, 0, 0, IS_VOID, 0)
 ZEND_END_ARG_INFO()
@@ -57,6 +57,8 @@ static zend_class_entry *register_class_Generator(zend_class_entry *class_entry_
 	INIT_CLASS_ENTRY(ce, "Generator", class_Generator_methods);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
 	zend_class_implements(class_entry, 1, class_entry_Iterator);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

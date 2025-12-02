@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: e0626e52adb2d38dad1140c1a28cc7774cc84500 */
+ * Stub hash: 84548d3b27e2bba14b47648ea52639a7a19b3b8c */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Closure___construct, 0, 0, 0)
 ZEND_END_ARG_INFO()
@@ -50,6 +50,8 @@ static zend_class_entry *register_class_Closure(void)
 
 	INIT_CLASS_ENTRY(ce, "Closure", class_Closure_methods);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

@@ -3709,32 +3709,32 @@ const CURLOPT_SAFE_UPLOAD = UNKNOWN;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+ #[\NoSerialize]
 final class CurlHandle
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+ #[\NoSerialize]
 final class CurlMultiHandle
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+ #[\NoSerialize]
 final class CurlShareHandle
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+ #[\NoSerialize]
 final class CurlSharePersistentHandle
 {
     public readonly array $options;

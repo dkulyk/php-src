@@ -1,12 +1,12 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 95f297028aee0675523d6984c03a518e4fc431df */
+ * Stub hash: 689d16855eb0231ab4ea7d82552a7ca137f19f24 */
 
 static zend_class_entry *register_class_Pdo_Dblib(zend_class_entry *class_entry_PDO)
 {
 	zend_class_entry ce, *class_entry;
 
 	INIT_NS_CLASS_ENTRY(ce, "Pdo", "Dblib", NULL);
-	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES);
 
 	zval const_ATTR_CONNECTION_TIMEOUT_value;
 	ZVAL_LONG(&const_ATTR_CONNECTION_TIMEOUT_value, PDO_DBLIB_ATTR_CONNECTION_TIMEOUT);

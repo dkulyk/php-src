@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class Transliterator
 {
     /** @cvalue TRANSLITERATOR_FORWARD */

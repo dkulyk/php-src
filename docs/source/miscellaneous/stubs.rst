@@ -334,7 +334,8 @@ Like functions and methods, classes also support meta information passed via PHP
    8.0), which disallow dynamic properties.
 
 -  ``@not-serializable``: adds the ``ZEND_ACC_NOT_SERIALIZABLE`` flag for the class (as of PHP 8.1),
-   which prevents the serialization of the class.
+   which prevents the serialization of the class. As of PHP 8.6 the `#[NoSerialize]` attribute should
+   be used instead.
 
 -  ``@genstubs-expose-comment-block``: By adding this tag at the beginning of a PHPDoc block, the
    content of the PHPDoc block will be exposed for `ReflectionClass::getDocComment()`. This feature

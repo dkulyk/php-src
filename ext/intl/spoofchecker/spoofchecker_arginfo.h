@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 4834be57a3f0cb74dbc4422e609846139f09f6cb */
+ * Stub hash: a8f4b10d71a6adce22c6c884e9f4a09aff20986f */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Spoofchecker___construct, 0, 0, 0)
 ZEND_END_ARG_INFO()
@@ -183,6 +183,8 @@ static zend_class_entry *register_class_Spoofchecker(void)
 	zend_declare_typed_class_constant(class_entry, const_SIMPLE_CASE_INSENSITIVE_name, &const_SIMPLE_CASE_INSENSITIVE_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_SIMPLE_CASE_INSENSITIVE_name, true);
 #endif
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

@@ -5,8 +5,8 @@
 namespace Dba {
     /**
      * @strict-properties
-     * @not-serializable
      */
+     #[\NoSerialize]
     final class Connection
     {
     }

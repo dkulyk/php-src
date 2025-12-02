@@ -4,8 +4,8 @@
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class Closure
 {
     private function __construct() {}

@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 006be61b2c519e7d9ca997a7f12135eb3e0f3500 */
+ * Stub hash: 00f204e32eb324a33afee95517375b95c1193a18 */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_PDO___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, dsn, IS_STRING, 0)
@@ -559,6 +559,8 @@ static zend_class_entry *register_class_PDO(void)
 	zend_string *const_CURSOR_SCROLL_name = zend_string_init_interned("CURSOR_SCROLL", sizeof("CURSOR_SCROLL") - 1, true);
 	zend_declare_typed_class_constant(class_entry, const_CURSOR_SCROLL_name, &const_CURSOR_SCROLL_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_CURSOR_SCROLL_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 
 	zend_add_parameter_attribute(zend_hash_str_find_ptr(&class_entry->function_table, "__construct", sizeof("__construct") - 1), 2, ZSTR_KNOWN(ZEND_STR_SENSITIVEPARAMETER), 0);

@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: f351fbf3afd9753fb16c87903c3dbd5e4621c024 */
+ * Stub hash: 6697dc5a0accecaf26429ee56b05c705533070fe */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_UConverter___construct, 0, 0, 0)
 	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, destination_encoding, IS_STRING, 1, "null")
@@ -369,6 +369,8 @@ static zend_class_entry *register_class_UConverter(void)
 	zend_string *const_IMAP_MAILBOX_name = zend_string_init_interned("IMAP_MAILBOX", sizeof("IMAP_MAILBOX") - 1, true);
 	zend_declare_typed_class_constant(class_entry, const_IMAP_MAILBOX_name, &const_IMAP_MAILBOX_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_IMAP_MAILBOX_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

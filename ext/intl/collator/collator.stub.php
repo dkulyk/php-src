@@ -13,7 +13,7 @@ const ULOC_ACTUAL_LOCALE = UNKNOWN;
  */
 const ULOC_VALID_LOCALE = UNKNOWN;
 
-/** @not-serializable */
+#[\NoSerialize]
 class Collator
 {
     /** @cvalue UCOL_DEFAULT */

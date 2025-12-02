@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 8233a8abc8ab7145d905d0fa51478edfe1e55a06 */
+ * Stub hash: 9d936042462688c54c3b6c01ac1bc19f407f810c */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_openssl_x509_export_to_file, 0, 2, _IS_BOOL, 0)
 	ZEND_ARG_OBJ_TYPE_MASK(0, certificate, OpenSSLCertificate, MAY_BE_STRING, NULL)
@@ -758,6 +758,8 @@ static zend_class_entry *register_class_OpenSSLCertificate(void)
 	INIT_CLASS_ENTRY(ce, "OpenSSLCertificate", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -768,6 +770,8 @@ static zend_class_entry *register_class_OpenSSLCertificateSigningRequest(void)
 	INIT_CLASS_ENTRY(ce, "OpenSSLCertificateSigningRequest", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -777,6 +781,8 @@ static zend_class_entry *register_class_OpenSSLAsymmetricKey(void)
 
 	INIT_CLASS_ENTRY(ce, "OpenSSLAsymmetricKey", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

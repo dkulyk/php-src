@@ -5,16 +5,16 @@
 namespace Odbc {
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     class Connection
     {
     }
 
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     class Result
     {
     }

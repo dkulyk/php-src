@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: cdbbdb55d1e53f422c5854460c3c6cc3d01360d7 */
+ * Stub hash: 587e9c3bb4e13d10cf2a1afb37f19e9081898073 */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_IntlListFormatter___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, locale, IS_STRING, 0)
@@ -94,6 +94,8 @@ static zend_class_entry *register_class_IntlListFormatter(void)
 	zend_declare_typed_class_constant(class_entry, const_WIDTH_NARROW_name, &const_WIDTH_NARROW_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_WIDTH_NARROW_name, true);
 #endif
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

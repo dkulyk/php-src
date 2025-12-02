@@ -25,7 +25,6 @@
 #include "ext/standard/php_string.h" /* For php_basename() */
 #include "ext/pcre/php_pcre.h"
 #include "ext/standard/php_filestat.h"
-#include "zend_attributes.h"
 #include "zend_interfaces.h"
 #include "php_zip.h"
 #include "php_zip_arginfo.h"

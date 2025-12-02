@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 9d2c0327499693f1ca2825a9ad42ad769f44a24a */
+ * Stub hash: 4ac331cba4259f83c300177cb2d4817dc002d384 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Pdo_Mysql_getWarningCount, 0, 0, IS_LONG, 0)
 ZEND_END_ARG_INFO()
@@ -16,7 +16,7 @@ static zend_class_entry *register_class_Pdo_Mysql(zend_class_entry *class_entry_
 	zend_class_entry ce, *class_entry;
 
 	INIT_NS_CLASS_ENTRY(ce, "Pdo", "Mysql", class_Pdo_Mysql_methods);
-	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES);
 
 	zval const_ATTR_USE_BUFFERED_QUERY_value;
 	ZVAL_LONG(&const_ATTR_USE_BUFFERED_QUERY_value, PDO_MYSQL_ATTR_USE_BUFFERED_QUERY);

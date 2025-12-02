@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 4456b13f7ed59847bbf129cd45b0d1f63ce70108 */
+ * Stub hash: cd1bba04baee9ed10486b8ef53f8829aedf23835 */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_IntlDatePatternGenerator___construct, 0, 0, 0)
 	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, locale, IS_STRING, 1, "null")
@@ -30,6 +30,8 @@ static zend_class_entry *register_class_IntlDatePatternGenerator(void)
 
 	INIT_CLASS_ENTRY(ce, "IntlDatePatternGenerator", class_IntlDatePatternGenerator_methods);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 6a5b332ba4bfeceaca6aad734d38dabb66d82c97 */
+ * Stub hash: 8fd32f8d459ad0fda01a92fe7d3c58f440c13992 */
 
 ZEND_BEGIN_ARG_WITH_TENTATIVE_RETURN_TYPE_INFO_EX(arginfo_class_PDOStatement_bindColumn, 0, 2, _IS_BOOL, 0)
 	ZEND_ARG_TYPE_MASK(0, column, MAY_BE_STRING|MAY_BE_LONG, NULL)
@@ -146,6 +146,8 @@ static zend_class_entry *register_class_PDOStatement(zend_class_entry *class_ent
 	zend_declare_typed_property(class_entry, property_queryString_name, &property_queryString_default_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_STRING));
 	zend_string_release_ex(property_queryString_name, true);
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -161,6 +163,8 @@ static zend_class_entry *register_class_PDORow(void)
 	zend_string *property_queryString_name = zend_string_init("queryString", sizeof("queryString") - 1, true);
 	zend_declare_typed_property(class_entry, property_queryString_name, &property_queryString_default_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_STRING));
 	zend_string_release_ex(property_queryString_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

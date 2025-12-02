@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 160d05ec65c45b66b13eaecbef20b3c59bfb33d1 */
+ * Stub hash: 86a6ff40f19b4d404c63247ecc7cfcd8274c518c */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_IntlDateFormatter___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, locale, IS_STRING, 1)
@@ -218,6 +218,8 @@ static zend_class_entry *register_class_IntlDateFormatter(void)
 	zend_string *const_TRADITIONAL_name = zend_string_init_interned("TRADITIONAL", sizeof("TRADITIONAL") - 1, true);
 	zend_declare_typed_class_constant(class_entry, const_TRADITIONAL_name, &const_TRADITIONAL_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_TRADITIONAL_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

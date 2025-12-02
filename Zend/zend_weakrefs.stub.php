@@ -4,8 +4,8 @@
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class WeakReference
 {
     public function __construct() {}
@@ -17,8 +17,8 @@ final class WeakReference
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class WeakMap implements ArrayAccess, Countable, IteratorAggregate
 {
     /** @param object $object */

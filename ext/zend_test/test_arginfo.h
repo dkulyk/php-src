@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: a8dae89983ccbcd5dd36d1cdee736d40af4fd33c */
+ * Stub hash: 5fdd1cd7f883f44e31c2073bc91f09c2aaf7196c */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_zend_trigger_bailout, 0, 0, IS_NEVER, 0)
 ZEND_END_ARG_INFO()
@@ -899,6 +899,10 @@ static zend_class_entry *register_class_ZendTestGenStubFlagCompatibilityTest(voi
 	class_entry->ce_flags |= ZEND_ACC_FINAL;
 #endif
 #endif
+
+	zend_string *attribute_name_NoSerialize_class_ZendTestGenStubFlagCompatibilityTest_0 = zend_string_init_interned("NoSerialize", sizeof("NoSerialize") - 1, true);
+	zend_add_class_attribute(class_entry, attribute_name_NoSerialize_class_ZendTestGenStubFlagCompatibilityTest_0, 0);
+	zend_string_release_ex(attribute_name_NoSerialize_class_ZendTestGenStubFlagCompatibilityTest_0, true);
 
 	return class_entry;
 }

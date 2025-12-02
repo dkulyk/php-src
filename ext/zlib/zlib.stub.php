@@ -145,16 +145,16 @@ const ZLIB_VERSION_ERROR = UNKNOWN;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class InflateContext
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class DeflateContext
 {
 }

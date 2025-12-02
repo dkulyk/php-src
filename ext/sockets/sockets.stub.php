@@ -2055,16 +2055,16 @@ const SHUT_RDWR = UNKNOWN;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class Socket
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class AddressInfo
 {
 }

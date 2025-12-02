@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 9e47a0d85336f0e149abbdf56468513c5d31780f */
+ * Stub hash: 810c61cbdf463068022f58db21de2902f85e1d5e */
 
 #if defined(HAVE_ORALDAP)
 ZEND_BEGIN_ARG_WITH_RETURN_OBJ_TYPE_MASK_EX(arginfo_ldap_connect, 0, 0, LDAP\\Connection, MAY_BE_FALSE)
@@ -775,6 +775,8 @@ static zend_class_entry *register_class_LDAP_Connection(void)
 	INIT_NS_CLASS_ENTRY(ce, "LDAP", "Connection", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -785,6 +787,8 @@ static zend_class_entry *register_class_LDAP_Result(void)
 	INIT_NS_CLASS_ENTRY(ce, "LDAP", "Result", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -794,6 +798,8 @@ static zend_class_entry *register_class_LDAP_ResultEntry(void)
 
 	INIT_NS_CLASS_ENTRY(ce, "LDAP", "ResultEntry", NULL);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_FINAL|ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

@@ -3,9 +3,9 @@
 /** @generate-class-entries */
 
 /**
- * @not-serializable
  * @strict-properties
  */
+#[\NoSerialize]
 final class IntlNumberRangeFormatter {
 #if U_ICU_VERSION_MAJOR_NUM >= 63
     /** @cvalue UNUM_RANGE_COLLAPSE_AUTO */

@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlDateFormatter
 {
     /** @cvalue UDAT_FULL */

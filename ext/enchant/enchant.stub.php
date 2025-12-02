@@ -24,16 +24,16 @@ const LIBENCHANT_VERSION = UNKNOWN;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class EnchantBroker
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class EnchantDictionary
 {
 }

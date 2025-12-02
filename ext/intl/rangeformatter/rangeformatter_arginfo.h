@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 7029642524e32984e893e1e050a5e0bbf275c416 */
+ * Stub hash: 4ed8c7380de73420098fb17934443115ad8ffedd */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_IntlNumberRangeFormatter___construct, 0, 0, 0)
 ZEND_END_ARG_INFO()
@@ -143,6 +143,8 @@ static zend_class_entry *register_class_IntlNumberRangeFormatter(void)
 	zend_declare_typed_class_constant(class_entry, const_IDENTITY_FALLBACK_RANGE_name, &const_IDENTITY_FALLBACK_RANGE_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_IDENTITY_FALLBACK_RANGE_name, true);
 #endif
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

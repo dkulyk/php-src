@@ -732,7 +732,7 @@ const U_STRINGPREP_CHECK_BIDI_ERROR = UNKNOWN;
  */
 const U_ERROR_LIMIT = UNKNOWN;
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlIterator implements Iterator
 {
     /** @tentative-return-type */

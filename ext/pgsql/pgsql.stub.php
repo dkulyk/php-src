@@ -981,24 +981,24 @@ namespace {
 namespace PgSql {
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     final class Connection
     {
     }
 
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     final class Result
     {
     }
 
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     final class Lob
     {
     }

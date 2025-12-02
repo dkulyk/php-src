@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlCalendar
 {
     /** @cvalue UCAL_ERA */
@@ -365,7 +365,7 @@ class IntlCalendar
     public function toDateTime(): DateTime|false {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlGregorianCalendar extends IntlCalendar
 {
     public static function createFromDate(int $year, int $month, int $dayOfMonth): static {}

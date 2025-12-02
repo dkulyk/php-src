@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 5dc9ab2cc5862b2082fb9cd5cec909298921b115 */
+ * Stub hash: 93af28fa1305276e3cad10f79dce3d0077432bdb */
 
 ZEND_BEGIN_ARG_WITH_TENTATIVE_RETURN_OBJ_INFO_EX(arginfo_class_IntlPartsIterator_getBreakIterator, 0, 0, IntlBreakIterator, 0)
 ZEND_END_ARG_INFO()
@@ -40,6 +40,8 @@ static zend_class_entry *register_class_IntlPartsIterator(zend_class_entry *clas
 	zend_string *const_KEY_RIGHT_name = zend_string_init_interned("KEY_RIGHT", sizeof("KEY_RIGHT") - 1, true);
 	zend_declare_typed_class_constant(class_entry, const_KEY_RIGHT_name, &const_KEY_RIGHT_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_KEY_RIGHT_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

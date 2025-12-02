@@ -4,8 +4,8 @@
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class Generator implements Iterator
 {
     public function rewind(): void {}

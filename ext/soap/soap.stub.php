@@ -5,16 +5,16 @@
 namespace Soap {
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     final class Url
     {
     }
 
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     final class Sdl
     {
     }

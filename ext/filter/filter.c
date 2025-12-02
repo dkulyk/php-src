@@ -27,7 +27,6 @@
 
 ZEND_DECLARE_MODULE_GLOBALS(filter)
 
-#include "zend_attributes.h"
 #include "filter_private.h"
 #include "filter_arginfo.h"
 #include "zend_exceptions.h"

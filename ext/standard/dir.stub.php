@@ -87,8 +87,8 @@ const SCANDIR_SORT_NONE = UNKNOWN;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class Directory
 {
     public readonly string $path;

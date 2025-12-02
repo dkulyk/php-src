@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: cbe3c5f4c35d93f90c3e7164bdfc4e2fefc88c83 */
+ * Stub hash: 5072d83f4c0ad043f829f9180d4b1fca1fe6d67f */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Collator___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, locale, IS_STRING, 0)
@@ -244,6 +244,8 @@ static zend_class_entry *register_class_Collator(void)
 	zend_string *const_SORT_NUMERIC_name = zend_string_init_interned("SORT_NUMERIC", sizeof("SORT_NUMERIC") - 1, true);
 	zend_declare_typed_class_constant(class_entry, const_SORT_NUMERIC_name, &const_SORT_NUMERIC_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_SORT_NUMERIC_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

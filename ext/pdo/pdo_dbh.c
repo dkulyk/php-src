@@ -27,7 +27,6 @@
 #include "php_pdo.h"
 #include "php_pdo_driver.h"
 #include "php_pdo_int.h"
-#include "zend_attributes.h"
 #include "zend_exceptions.h"
 #include "zend_object_handlers.h"
 #include "zend_hash.h"

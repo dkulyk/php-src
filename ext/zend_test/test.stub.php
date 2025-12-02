@@ -92,9 +92,7 @@ namespace {
         public function returnsThrowable(): Exception {}
     }
 
-    /**
-     * @not-serializable
-     */
+    #[\NoSerialize]
     final class ZendTestGenStubFlagCompatibilityTest {
 
     }

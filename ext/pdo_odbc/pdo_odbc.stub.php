@@ -13,7 +13,6 @@ namespace {
 namespace Pdo {
     /**
      * @strict-properties
-     * @not-serializable
      */
     class Odbc extends \PDO
     {

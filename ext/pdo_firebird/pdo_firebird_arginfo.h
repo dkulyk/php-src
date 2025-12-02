@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: d36b2055abc48ae91c3442dda68fa2a28eb6d25b */
+ * Stub hash: 3549399ff951b35110d6d958643671e7ca5f6033 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Pdo_Firebird_getApiVersion, 0, 0, IS_LONG, 0)
 ZEND_END_ARG_INFO()
@@ -16,7 +16,7 @@ static zend_class_entry *register_class_Pdo_Firebird(zend_class_entry *class_ent
 	zend_class_entry ce, *class_entry;
 
 	INIT_NS_CLASS_ENTRY(ce, "Pdo", "Firebird", class_Pdo_Firebird_methods);
-	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES|ZEND_ACC_NOT_SERIALIZABLE);
+	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_PDO, ZEND_ACC_NO_DYNAMIC_PROPERTIES);
 
 	zval const_ATTR_DATE_FORMAT_value;
 	ZVAL_LONG(&const_ATTR_DATE_FORMAT_value, PDO_FB_ATTR_DATE_FORMAT);

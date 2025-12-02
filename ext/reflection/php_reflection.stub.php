@@ -16,7 +16,7 @@ interface Reflector extends Stringable
 {
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 abstract class ReflectionFunctionAbstract implements Reflector
 {
     public string $name;
@@ -141,7 +141,7 @@ class ReflectionFunction extends ReflectionFunctionAbstract
     public function getClosure(): Closure {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 final class ReflectionGenerator
 {
     public function __construct(Generator $generator) {}
@@ -230,7 +230,7 @@ class ReflectionMethod extends ReflectionFunctionAbstract
     public function setAccessible(bool $accessible): void {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class ReflectionClass implements Reflector
 {
     /**
@@ -446,7 +446,7 @@ enum PropertyHookType: string
     case Set = 'set';
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class ReflectionProperty implements Reflector
 {
     /** @cvalue ZEND_ACC_STATIC */
@@ -573,7 +573,7 @@ class ReflectionProperty implements Reflector
     public function isFinal(): bool {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class ReflectionClassConstant implements Reflector
 {
     /** @cvalue ZEND_ACC_PUBLIC */
@@ -632,7 +632,7 @@ class ReflectionClassConstant implements Reflector
     public function getType(): ?ReflectionType {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class ReflectionParameter implements Reflector
 {
     public string $name;
@@ -713,7 +713,7 @@ class ReflectionParameter implements Reflector
     public function getAttributes(?string $name = null, int $flags = 0): array {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 abstract class ReflectionType implements Stringable
 {
     /** @implementation-alias ReflectionClass::__clone */
@@ -744,7 +744,7 @@ class ReflectionIntersectionType extends ReflectionType
     public function getTypes(): array {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class ReflectionExtension implements Reflector
 {
     public string $name;
@@ -790,7 +790,7 @@ class ReflectionExtension implements Reflector
     public function isTemporary(): bool {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class ReflectionZendExtension implements Reflector
 {
     public string $name;
@@ -818,7 +818,7 @@ class ReflectionZendExtension implements Reflector
     public function getCopyright(): string {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 final class ReflectionReference
 {
     public static function fromArrayElement(array $array, int|string $key): ?ReflectionReference {}
@@ -831,7 +831,7 @@ final class ReflectionReference
     private function __construct() {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class ReflectionAttribute implements Reflector
 {
     /** @cvalue REFLECTION_ATTRIBUTE_IS_INSTANCEOF */
@@ -884,7 +884,7 @@ class ReflectionEnumBackedCase extends ReflectionEnumUnitCase
     public function getBackingValue(): int|string {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 final class ReflectionFiber
 {
     public function __construct(Fiber $fiber) {}
@@ -902,8 +902,8 @@ final class ReflectionFiber
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 class ReflectionConstant implements Reflector
 {
     public string $name;

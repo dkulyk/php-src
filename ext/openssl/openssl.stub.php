@@ -412,24 +412,24 @@ const OPENSSL_ENCODING_PEM = UNKNOWN;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class OpenSSLCertificate
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class OpenSSLCertificateSigningRequest
 {
 }
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class OpenSSLAsymmetricKey
 {
 }

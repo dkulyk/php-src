@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 9ed8bfc955a557c02171ec12b4634c60c6fb513e */
+ * Stub hash: 72104705472236cf1dadb2ce0f11503657a9c68e */
 
 ZEND_BEGIN_ARG_WITH_TENTATIVE_RETURN_TYPE_INFO_EX(arginfo_class_IntlIterator_current, 0, 0, IS_MIXED, 0)
 ZEND_END_ARG_INFO()
@@ -189,6 +189,8 @@ static zend_class_entry *register_class_IntlIterator(zend_class_entry *class_ent
 	INIT_CLASS_ENTRY(ce, "IntlIterator", class_IntlIterator_methods);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_NOT_SERIALIZABLE);
 	zend_class_implements(class_entry, 1, class_entry_Iterator);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

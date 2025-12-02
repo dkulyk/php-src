@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class PDO
 {
     /** @cvalue LONG_CONST(PDO_PARAM_NULL) */

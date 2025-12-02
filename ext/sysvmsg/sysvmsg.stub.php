@@ -30,8 +30,8 @@ const MSG_EXCEPT = UNKNOWN;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class SysvMessageQueue
 {
 }

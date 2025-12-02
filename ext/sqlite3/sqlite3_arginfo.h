@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: da91c32c6070c808d6e1b01894b5f8beedda7b45 */
+ * Stub hash: 3704ed0c5d646476759855c2f8a21545fad155eb */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_SQLite3___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, filename, IS_STRING, 0)
@@ -554,6 +554,8 @@ static zend_class_entry *register_class_SQLite3(void)
 	zend_string_release_ex(const_RECURSIVE_name, true);
 #endif
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -584,6 +586,8 @@ static zend_class_entry *register_class_SQLite3Stmt(void)
 	zend_string_release_ex(const_EXPLAIN_MODE_EXPLAIN_QUERY_PLAN_name, true);
 #endif
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -593,6 +597,8 @@ static zend_class_entry *register_class_SQLite3Result(void)
 
 	INIT_CLASS_ENTRY(ce, "SQLite3Result", class_SQLite3Result_methods);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 2fc12d1fde65efbec4305f4934a3f4b25282a552 */
+ * Stub hash: b9710823bf7f8d044f47baea1a13652d8d4e0d10 */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_IntlCalendar___construct, 0, 0, 0)
 ZEND_END_ARG_INFO()
@@ -561,6 +561,8 @@ static zend_class_entry *register_class_IntlCalendar(void)
 	zend_declare_typed_class_constant(class_entry, const_WALLTIME_NEXT_VALID_name, &const_WALLTIME_NEXT_VALID_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_WALLTIME_NEXT_VALID_name, true);
 
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
+
 	return class_entry;
 }
 
@@ -570,6 +572,8 @@ static zend_class_entry *register_class_IntlGregorianCalendar(zend_class_entry *
 
 	INIT_CLASS_ENTRY(ce, "IntlGregorianCalendar", class_IntlGregorianCalendar_methods);
 	class_entry = zend_register_internal_class_with_flags(&ce, class_entry_IntlCalendar, ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

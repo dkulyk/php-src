@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 300bcc64e5ddaf469bfe4a12e65a6677bf2aea88 */
+ * Stub hash: e58e7546e3639e472efcdca1e8a9126b027d4b56 */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Transliterator___construct, 0, 0, 0)
 ZEND_END_ARG_INFO()
@@ -77,6 +77,8 @@ static zend_class_entry *register_class_Transliterator(void)
 	zend_string *property_id_name = zend_string_init("id", sizeof("id") - 1, true);
 	zend_declare_typed_property(class_entry, property_id_name, &property_id_default_value, ZEND_ACC_PUBLIC|ZEND_ACC_READONLY, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_STRING));
 	zend_string_release_ex(property_id_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

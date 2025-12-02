@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 22e652c6a05ade0a6fd3119e4742cd260ba27146 */
+ * Stub hash: 49fb1387f48e9a13d0286dc6127cdc2be9ff57bc */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_IntlTimeZone___construct, 0, 0, 0)
 ZEND_END_ARG_INFO()
@@ -231,6 +231,8 @@ static zend_class_entry *register_class_IntlTimeZone(void)
 	zend_string *const_TYPE_CANONICAL_LOCATION_name = zend_string_init_interned("TYPE_CANONICAL_LOCATION", sizeof("TYPE_CANONICAL_LOCATION") - 1, true);
 	zend_declare_typed_class_constant(class_entry, const_TYPE_CANONICAL_LOCATION_name, &const_TYPE_CANONICAL_LOCATION_value, ZEND_ACC_PUBLIC, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_TYPE_CANONICAL_LOCATION_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

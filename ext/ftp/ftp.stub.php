@@ -139,8 +139,8 @@ namespace {
 namespace FTP {
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     final class Connection
     {
     }

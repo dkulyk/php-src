@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class SplFileInfo implements Stringable
 {
     public function __construct(string $filename) {}

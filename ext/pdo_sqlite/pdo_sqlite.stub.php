@@ -6,7 +6,6 @@ namespace Pdo;
 
 /**
  * @strict-properties
- * @not-serializable
  */
 class Sqlite extends \PDO
 {

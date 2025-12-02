@@ -461,14 +461,14 @@ const PNG_ALL_FILTERS = 0x08 | 0x10 | 0x20 | 0x40 | 0x80;
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class GdImage {}
 
 /**
  * @strict-properties
- * @not-serializable
  */
+#[\NoSerialize]
 final class GdFont {}
 
 /**

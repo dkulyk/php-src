@@ -1200,7 +1200,7 @@ namespace
     }
 
 #ifdef LIBXML_XPATH_ENABLED
-    /** @not-serializable */
+    #[\NoSerialize]
     class DOMXPath
     {
         /**
@@ -1339,8 +1339,8 @@ namespace Dom
 
     /**
      * @strict-properties
-     * @not-serializable
      */
+    #[\NoSerialize]
     class Implementation
     {
         public function createDocumentType(string $qualifiedName, string $publicId, string $systemId): DocumentType {}
@@ -2110,9 +2110,9 @@ namespace Dom
     }
 
     /**
-     * @not-serializable
      * @strict-properties
      */
+    #[\NoSerialize]
     final class TokenList implements \IteratorAggregate, \Countable
     {
         /** @implementation-alias Dom\Node::__construct */
@@ -2139,9 +2139,9 @@ namespace Dom
     }
 
     /**
-     * @not-serializable
      * @strict-properties
      */
+    #[\NoSerialize]
     readonly final class NamespaceInfo
     {
         public ?string $prefix;
@@ -2153,7 +2153,7 @@ namespace Dom
     }
 
 #ifdef LIBXML_XPATH_ENABLED
-    /** @not-serializable */
+    #[\NoSerialize]
     final class XPath
     {
         /**

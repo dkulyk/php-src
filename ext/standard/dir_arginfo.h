@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: e21d382cd4001001874c49d8c5244efb57613910 */
+ * Stub hash: 4e5083e11cd96acee2aa49073d09f4dbcbb56237 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Directory_close, 0, 0, IS_VOID, 0)
 ZEND_END_ARG_INFO()
@@ -69,6 +69,8 @@ static zend_class_entry *register_class_Directory(void)
 	zend_string *property_handle_name = zend_string_init("handle", sizeof("handle") - 1, true);
 	zend_declare_typed_property(class_entry, property_handle_name, &property_handle_default_value, ZEND_ACC_PUBLIC|ZEND_ACC_READONLY, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_ANY));
 	zend_string_release_ex(property_handle_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

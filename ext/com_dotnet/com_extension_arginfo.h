@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 9b2eea541946c291eb002ee98997f3dcad8bdfce */
+ * Stub hash: f98d750741f54559b87ae683884607ff25924621 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_variant_set, 0, 2, IS_VOID, 0)
 	ZEND_ARG_OBJ_INFO(0, variant, variant, 0)
@@ -291,6 +291,8 @@ static zend_class_entry *register_class_variant(void)
 
 	INIT_CLASS_ENTRY(ce, "variant", class_variant_methods);
 	class_entry = zend_register_internal_class_with_flags(&ce, NULL, ZEND_ACC_NOT_SERIALIZABLE);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 	return class_entry;
 }

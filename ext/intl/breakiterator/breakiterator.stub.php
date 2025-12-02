@@ -2,7 +2,7 @@
 
 /** @generate-class-entries */
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlBreakIterator implements IteratorAggregate
 {
     /** @cvalue BreakIterator::DONE */
@@ -112,7 +112,7 @@ class IntlBreakIterator implements IteratorAggregate
     public function getIterator(): Iterator {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlRuleBasedBreakIterator extends IntlBreakIterator
 {
     public function __construct(string $rules, bool $compiled = false) {}
@@ -130,7 +130,7 @@ class IntlRuleBasedBreakIterator extends IntlBreakIterator
     public function getRuleStatusVec(): array|false {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class IntlCodePointBreakIterator extends IntlBreakIterator
 {
     /** @tentative-return-type */

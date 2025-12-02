@@ -62,7 +62,7 @@ const FILEINFO_APPLE = UNKNOWN;
  */
 const FILEINFO_EXTENSION = UNKNOWN;
 
-/** @not-serializable */
+#[\NoSerialize]
 class finfo
 {
     /** @alias finfo_open */

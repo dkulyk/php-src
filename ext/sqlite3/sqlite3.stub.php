@@ -75,7 +75,7 @@ class SQLite3Exception extends \Exception
 {
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class SQLite3
 {
     /** @cvalue SQLITE_OK */
@@ -241,7 +241,7 @@ class SQLite3
     public function setAuthorizer(?callable $callback): bool {}
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class SQLite3Stmt
 {
     private function __construct(SQLite3 $sqlite3, string $query) {}
@@ -285,7 +285,7 @@ class SQLite3Stmt
 #endif
 }
 
-/** @not-serializable */
+#[\NoSerialize]
 class SQLite3Result
 {
     private function __construct() {}

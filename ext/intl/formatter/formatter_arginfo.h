@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: d886941aa76837aed1da08845dbaff9442107203 */
+ * Stub hash: 4f55b74d180d4db71b782ec92058b2e2ba490448 */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_NumberFormatter___construct, 0, 0, 2)
 	ZEND_ARG_TYPE_INFO(0, locale, IS_STRING, 0)
@@ -624,6 +624,8 @@ static zend_class_entry *register_class_NumberFormatter(void)
 	zend_string *const_TYPE_CURRENCY_name = zend_string_init_interned("TYPE_CURRENCY", sizeof("TYPE_CURRENCY") - 1, true);
 	zend_class_constant *const_TYPE_CURRENCY = zend_declare_typed_class_constant(class_entry, const_TYPE_CURRENCY_name, &const_TYPE_CURRENCY_value, ZEND_ACC_PUBLIC|ZEND_ACC_DEPRECATED, NULL, (zend_type) ZEND_TYPE_INIT_MASK(MAY_BE_LONG));
 	zend_string_release_ex(const_TYPE_CURRENCY_name, true);
+
+	zend_add_class_attribute(class_entry, ZSTR_KNOWN(ZEND_STR_NO_SERIALIZE), 0);
 
 
 	zend_attribute *attribute_Deprecated_const_TYPE_CURRENCY_0 = zend_add_class_constant_attribute(class_entry, const_TYPE_CURRENCY, ZSTR_KNOWN(ZEND_STR_DEPRECATED_CAPITALIZED), 1);
